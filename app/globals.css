@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root,
+:root[data-theme="light"] {
+  --paper: #f4f3ef;
+  --ink: #1a1916;
+  --faint: #5c5954;
+  --rule: #e2dfd8;
+  --soft: #eae8e2;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --paper: #131311;
+  --ink: #f2f0ea;
+  --faint: #a8a49a;
+  --rule: #2e2c28;
+  --soft: #22211e;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-faint: var(--faint);
+  --color-rule: var(--rule);
+  --color-soft: var(--soft);
+}
+
+html {
+  background: var(--paper);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+input:focus-visible {
+  outline: none;
+  border-color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button,
+  label {
+    transition: none;
+  }
+}
